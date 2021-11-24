@@ -1,0 +1,146 @@
+{
+    "hosts": {
+        "h1": {"ip": "10.0.1.1/24", "mac": "08:00:00:00:01:11", "ipv6":"1::1/64",
+               "commands":["route add default gw 10.0.1.10 dev eth0",
+                           "arp -i eth0 -s 10.0.1.10 08:00:00:00:01:00",
+                       		"ip -6 route add default via 1::ff dev eth0"]},
+        "h2": {"ip": "10.0.2.2/24", "mac": "08:00:00:00:02:22","ipv6": "2::2/64",
+               "commands":["route add default gw 10.0.2.20 dev eth0",
+                           "arp -i eth0 -s 10.0.2.20 08:00:00:00:02:00",
+                       	   "ip -6 route add default via 2::ff dev eth0"]},
+    },
+    "switches": {
+        "s1": { "runtime_json" : "s1-runtime.json" },
+        "s2": { "runtime_json" : "s2-runtime.json" },
+    },
+    "links": [
+        ["h1", "s1-p1"],
+        ["s1-p2", "s2-p2"],
+        ["h2", "s2-p1"],
+    ]
+}
+
+
+{
+  "target": "bmv2",
+  "p4info": "build/srv6.p4.p4info.txt",
+  "bmv2_json": "build/srv6.json",
+  "table_entries": [
+  	{
+  	  "table": "ingress.local_mac_table",
+  	  "match": {
+  	  	"hdr.ethernet.dst_addr": "08:00:00:00:22:00"
+  	  },
+  	  "action_name": "NoAction",
+      "action_params": {}
+  	},
+  	{
+  		"table": "ingress.local_sid_table",
+  		"match": {
+  			"hdr.ipv6.dst_addr": ["A2:22::22",64]
+  		},
+  		"action_name": "end",
+  		"action_params": {}
+  	},
+  	{
+  		"table": "ingress.transit_table",
+  		"match": {
+  			"hdr.ipv6.dst_addr": ["1::1", 64]
+  		},
+  		"action_name": "insert_segment_list_2",
+  		"action_params": {
+  			"s1": "A1:11::11",
+  			"s2": "1::1",
+  		}
+  	},
+    {
+      "table": "ingress.routing_v6_table",
+      "match": {
+      	"hdr.ipv6.dst_addr": ["2::2", 64]
+      },
+      "action_name": "set_next_hop",
+      "action_params": {
+      		"dmac": "08:00:00:00:02:00",
+      		"port": 1
+      }
+    },
+    {
+      "table": "ingress.routing_v6_table",
+      "match": {
+      	"hdr.ipv6.dst_addr": ["A1:11::11", 64]
+      },
+      "action_name": "set_next_hop",
+      "action_params": {
+      		"dmac": "08:00:00:00:11:00",
+      		"port": 2
+      }
+    }
+  ]
+}
+
+
+{
+  "target": "bmv2",
+  "p4info": "build/srv6.p4.p4info.txt",
+  "bmv2_json": "build/srv6.json",
+  "table_entries": [
+
+  	{
+  	  "table": "ingress.local_mac_table",
+  	  "match": {
+  	  	"hdr.ethernet.dst_addr": "08:00:00:00:11:00"
+  	  },
+  	  "action_name": "NoAction",
+      "action_params": {}
+  	},
+
+  	{
+  		"table": "ingress.local_sid_table",
+  		"match": {
+  			"hdr.ipv6.dst_addr": ["A1:11::11",64]
+  		},
+  		"action_name": "end",
+  		"action_params": {}
+
+  	},
+
+  	{
+  		"table": "ingress.transit_table",
+  		"match": {
+  			"hdr.ipv6.dst_addr": ["2::2", 64]
+  		},
+  		"action_name": "insert_segment_list_2",
+  		"action_params": {
+  			"s1": "A2:22::22",
+  			"s2": "2::2",
+  		}
+  	},
+
+    {
+      "table": "ingress.routing_v6_table",
+      "match": {
+      	"hdr.ipv6.dst_addr": ["A2:22::22", 64]
+      },
+      "action_name": "set_next_hop",
+      "action_params": {
+      		"dmac": "08:00:00:00:22:00",
+      		"port": 2
+      }
+
+    },
+
+    {
+      "table": "ingress.routing_v6_table",
+      "match": {
+      	"hdr.ipv6.dst_addr": ["1::1", 64]
+      },
+      "action_name": "set_next_hop",
+      "action_params": {
+      		"dmac": "08:00:00:00:01:00",
+      		"port": 1
+      }
+
+    },
+
+  ]
+}

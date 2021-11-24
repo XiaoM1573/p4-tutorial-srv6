@@ -1,0 +1,277 @@
+Calling target program-options parser
+[14:52:55.590] [bmv2] [D] [thread 12714] Set default default entry for table 'tbl_srv6l370': srv6l370 - 
+[14:52:55.591] [bmv2] [D] [thread 12714] Set default default entry for table 'ingress.local_mac_table': NoAction - 
+[14:52:55.591] [bmv2] [D] [thread 12714] Set default default entry for table 'ingress.local_sid_table': NoAction - 
+[14:52:55.591] [bmv2] [D] [thread 12714] Set default default entry for table 'tbl_srv6_pop': ingress.srv6_pop - 
+[14:52:55.591] [bmv2] [D] [thread 12714] Set default default entry for table 'ingress.transit_table': NoAction - 
+[14:52:55.591] [bmv2] [D] [thread 12714] Set default default entry for table 'ingress.routing_v6_table': NoAction - 
+[14:52:55.591] [bmv2] [D] [thread 12714] Set default default entry for table 'tbl_drop': ingress.drop - 
+[14:52:55.591] [bmv2] [D] [thread 12714] Set default default entry for table 'tbl_srv6l422': srv6l422 - 
+Adding interface s2-eth1 as port 1
+[14:52:55.592] [bmv2] [D] [thread 12714] Adding interface s2-eth1 as port 1
+Adding interface s2-eth2 as port 2
+[14:52:55.639] [bmv2] [D] [thread 12714] Adding interface s2-eth2 as port 2
+Server listening on 0.0.0.0:50052
+[14:52:55.676] [bmv2] [I] [thread 12714] Starting Thrift server on port 9091
+[14:52:55.676] [bmv2] [I] [thread 12714] Thrift server was started
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Processing packet received on port 1
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Parser 'parser': start
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Parser state 'start': key is 0001
+[14:52:56.008] [bmv2] [T] [thread 12725] [0.0] [cxt 0] Bytes parsed: 0
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Extracting header 'ethernet'
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Parser state 'parse_ethernet': key is 86dd
+[14:52:56.008] [bmv2] [T] [thread 12725] [0.0] [cxt 0] Bytes parsed: 14
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Parser 'parser': end
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Pipeline 'ingress': start
+[14:52:56.008] [bmv2] [T] [thread 12725] [0.0] [cxt 0] srv6.p4(366) Condition "standard_metadata.ingress_port == CPU_PORT" (node_2) is false
+[14:52:56.008] [bmv2] [T] [thread 12725] [0.0] [cxt 0] Applying table 'ingress.local_mac_table'
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Looking up key:
+* hdr.ethernet.dst_addr: 333300000016
+
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Table 'ingress.local_mac_table': miss
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Action entry is NoAction - 
+[14:52:56.008] [bmv2] [T] [thread 12725] [0.0] [cxt 0] Action NoAction
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Pipeline 'ingress': end
+[14:52:56.008] [bmv2] [D] [thread 12725] [0.0] [cxt 0] Egress port is 0
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Processing packet received on port 1
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Parser 'parser': start
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Parser state 'start': key is 0001
+[14:52:56.008] [bmv2] [T] [thread 12725] [1.0] [cxt 0] Bytes parsed: 0
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Extracting header 'ethernet'
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Parser state 'parse_ethernet': key is 86dd
+[14:52:56.008] [bmv2] [T] [thread 12725] [1.0] [cxt 0] Bytes parsed: 14
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Parser 'parser': end
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Pipeline 'ingress': start
+[14:52:56.008] [bmv2] [T] [thread 12725] [1.0] [cxt 0] srv6.p4(366) Condition "standard_metadata.ingress_port == CPU_PORT" (node_2) is false
+[14:52:56.008] [bmv2] [T] [thread 12725] [1.0] [cxt 0] Applying table 'ingress.local_mac_table'
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Looking up key:
+* hdr.ethernet.dst_addr: 333300000002
+
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Table 'ingress.local_mac_table': miss
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Action entry is NoAction - 
+[14:52:56.008] [bmv2] [T] [thread 12725] [1.0] [cxt 0] Action NoAction
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Pipeline 'ingress': end
+[14:52:56.008] [bmv2] [D] [thread 12725] [1.0] [cxt 0] Egress port is 0
+[14:52:56.008] [bmv2] [D] [thread 12726] [0.0] [cxt 0] Pipeline 'egress': start
+[14:52:56.008] [bmv2] [T] [thread 12726] [0.0] [cxt 0] srv6.p4(418) Condition "standard_metadata.egress_port == CPU_PORT" (node_15) is false
+[14:52:56.008] [bmv2] [D] [thread 12726] [0.0] [cxt 0] Pipeline 'egress': end
+[14:52:56.008] [bmv2] [D] [thread 12726] [0.0] [cxt 0] Deparser 'deparser': start
+[14:52:56.008] [bmv2] [T] [thread 12726] [0.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[14:52:56.008] [bmv2] [D] [thread 12726] [0.0] [cxt 0] Deparsing header 'ethernet'
+[14:52:56.009] [bmv2] [D] [thread 12726] [0.0] [cxt 0] Deparser 'deparser': end
+[14:52:56.009] [bmv2] [D] [thread 12730] [0.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[14:52:56.009] [bmv2] [D] [thread 12726] [1.0] [cxt 0] Pipeline 'egress': start
+[14:52:56.009] [bmv2] [T] [thread 12726] [1.0] [cxt 0] srv6.p4(418) Condition "standard_metadata.egress_port == CPU_PORT" (node_15) is false
+[14:52:56.009] [bmv2] [D] [thread 12726] [1.0] [cxt 0] Pipeline 'egress': end
+[14:52:56.009] [bmv2] [D] [thread 12726] [1.0] [cxt 0] Deparser 'deparser': start
+[14:52:56.009] [bmv2] [T] [thread 12726] [1.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[14:52:56.009] [bmv2] [D] [thread 12726] [1.0] [cxt 0] Deparsing header 'ethernet'
+[14:52:56.009] [bmv2] [D] [thread 12726] [1.0] [cxt 0] Deparser 'deparser': end
+[14:52:56.009] [bmv2] [D] [thread 12730] [1.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Processing packet received on port 2
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Parser 'parser': start
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Parser 'parser' entering state 'start'
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Parser state 'start': key is 0002
+[14:52:56.159] [bmv2] [T] [thread 12725] [2.0] [cxt 0] Bytes parsed: 0
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Extracting header 'ethernet'
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Parser state 'parse_ethernet': key is 86dd
+[14:52:56.159] [bmv2] [T] [thread 12725] [2.0] [cxt 0] Bytes parsed: 14
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Parser 'parser': end
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Pipeline 'ingress': start
+[14:52:56.159] [bmv2] [T] [thread 12725] [2.0] [cxt 0] srv6.p4(366) Condition "standard_metadata.ingress_port == CPU_PORT" (node_2) is false
+[14:52:56.159] [bmv2] [T] [thread 12725] [2.0] [cxt 0] Applying table 'ingress.local_mac_table'
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Looking up key:
+* hdr.ethernet.dst_addr: 333300000016
+
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Table 'ingress.local_mac_table': miss
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Action entry is NoAction - 
+[14:52:56.159] [bmv2] [T] [thread 12725] [2.0] [cxt 0] Action NoAction
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Pipeline 'ingress': end
+[14:52:56.159] [bmv2] [D] [thread 12725] [2.0] [cxt 0] Egress port is 0
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Processing packet received on port 2
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Parser 'parser': start
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Parser 'parser' entering state 'start'
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Parser state 'start': key is 0002
+[14:52:56.159] [bmv2] [T] [thread 12725] [3.0] [cxt 0] Bytes parsed: 0
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Extracting header 'ethernet'
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Parser state 'parse_ethernet': key is 86dd
+[14:52:56.159] [bmv2] [T] [thread 12725] [3.0] [cxt 0] Bytes parsed: 14
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Parser 'parser': end
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Pipeline 'ingress': start
+[14:52:56.159] [bmv2] [T] [thread 12725] [3.0] [cxt 0] srv6.p4(366) Condition "standard_metadata.ingress_port == CPU_PORT" (node_2) is false
+[14:52:56.159] [bmv2] [T] [thread 12725] [3.0] [cxt 0] Applying table 'ingress.local_mac_table'
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Looking up key:
+* hdr.ethernet.dst_addr: 333300000002
+
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Table 'ingress.local_mac_table': miss
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Action entry is NoAction - 
+[14:52:56.159] [bmv2] [T] [thread 12725] [3.0] [cxt 0] Action NoAction
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Pipeline 'ingress': end
+[14:52:56.159] [bmv2] [D] [thread 12725] [3.0] [cxt 0] Egress port is 0
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Processing packet received on port 2
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Parser 'parser': start
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Parser 'parser' entering state 'start'
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Parser state 'start': key is 0002
+[14:52:56.159] [bmv2] [T] [thread 12725] [4.0] [cxt 0] Bytes parsed: 0
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Extracting header 'ethernet'
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Parser state 'parse_ethernet': key is 86dd
+[14:52:56.159] [bmv2] [T] [thread 12725] [4.0] [cxt 0] Bytes parsed: 14
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Parser 'parser': end
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Pipeline 'ingress': start
+[14:52:56.159] [bmv2] [T] [thread 12725] [4.0] [cxt 0] srv6.p4(366) Condition "standard_metadata.ingress_port == CPU_PORT" (node_2) is false
+[14:52:56.159] [bmv2] [T] [thread 12725] [4.0] [cxt 0] Applying table 'ingress.local_mac_table'
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Looking up key:
+* hdr.ethernet.dst_addr: 333300000016
+
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Table 'ingress.local_mac_table': miss
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Action entry is NoAction - 
+[14:52:56.159] [bmv2] [T] [thread 12725] [4.0] [cxt 0] Action NoAction
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Pipeline 'ingress': end
+[14:52:56.159] [bmv2] [D] [thread 12725] [4.0] [cxt 0] Egress port is 0
+[14:52:56.159] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Processing packet received on port 2
+[14:52:56.159] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Parser 'parser': start
+[14:52:56.159] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Parser 'parser' entering state 'start'
+[14:52:56.159] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Parser state 'start': key is 0002
+[14:52:56.159] [bmv2] [T] [thread 12725] [5.0] [cxt 0] Bytes parsed: 0
+[14:52:56.159] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[14:52:56.159] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Extracting header 'ethernet'
+[14:52:56.159] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Parser state 'parse_ethernet': key is 86dd
+[14:52:56.159] [bmv2] [T] [thread 12725] [5.0] [cxt 0] Bytes parsed: 14
+[14:52:56.159] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Parser 'parser': end
+[14:52:56.159] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Pipeline 'ingress': start
+[14:52:56.159] [bmv2] [T] [thread 12725] [5.0] [cxt 0] srv6.p4(366) Condition "standard_metadata.ingress_port == CPU_PORT" (node_2) is false
+[14:52:56.159] [bmv2] [T] [thread 12725] [5.0] [cxt 0] Applying table 'ingress.local_mac_table'
+[14:52:56.159] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Looking up key:
+* hdr.ethernet.dst_addr: 333300000002
+
+[14:52:56.160] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Table 'ingress.local_mac_table': miss
+[14:52:56.160] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Action entry is NoAction - 
+[14:52:56.160] [bmv2] [T] [thread 12725] [5.0] [cxt 0] Action NoAction
+[14:52:56.160] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Pipeline 'ingress': end
+[14:52:56.160] [bmv2] [D] [thread 12725] [5.0] [cxt 0] Egress port is 0
+[14:52:56.160] [bmv2] [D] [thread 12726] [2.0] [cxt 0] Pipeline 'egress': start
+[14:52:56.160] [bmv2] [T] [thread 12726] [2.0] [cxt 0] srv6.p4(418) Condition "standard_metadata.egress_port == CPU_PORT" (node_15) is false
+[14:52:56.160] [bmv2] [D] [thread 12726] [2.0] [cxt 0] Pipeline 'egress': end
+[14:52:56.160] [bmv2] [D] [thread 12726] [2.0] [cxt 0] Deparser 'deparser': start
+[14:52:56.160] [bmv2] [T] [thread 12726] [2.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[14:52:56.160] [bmv2] [D] [thread 12726] [2.0] [cxt 0] Deparsing header 'ethernet'
+[14:52:56.160] [bmv2] [D] [thread 12726] [2.0] [cxt 0] Deparser 'deparser': end
+[14:52:56.160] [bmv2] [D] [thread 12730] [2.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[14:52:56.160] [bmv2] [D] [thread 12726] [3.0] [cxt 0] Pipeline 'egress': start
+[14:52:56.160] [bmv2] [T] [thread 12726] [3.0] [cxt 0] srv6.p4(418) Condition "standard_metadata.egress_port == CPU_PORT" (node_15) is false
+[14:52:56.160] [bmv2] [D] [thread 12726] [3.0] [cxt 0] Pipeline 'egress': end
+[14:52:56.160] [bmv2] [D] [thread 12726] [3.0] [cxt 0] Deparser 'deparser': start
+[14:52:56.160] [bmv2] [T] [thread 12726] [3.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[14:52:56.160] [bmv2] [D] [thread 12726] [3.0] [cxt 0] Deparsing header 'ethernet'
+[14:52:56.160] [bmv2] [D] [thread 12726] [3.0] [cxt 0] Deparser 'deparser': end
+[14:52:56.160] [bmv2] [D] [thread 12730] [3.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[14:52:56.160] [bmv2] [D] [thread 12726] [4.0] [cxt 0] Pipeline 'egress': start
+[14:52:56.160] [bmv2] [T] [thread 12726] [4.0] [cxt 0] srv6.p4(418) Condition "standard_metadata.egress_port == CPU_PORT" (node_15) is false
+[14:52:56.160] [bmv2] [D] [thread 12726] [4.0] [cxt 0] Pipeline 'egress': end
+[14:52:56.160] [bmv2] [D] [thread 12726] [4.0] [cxt 0] Deparser 'deparser': start
+[14:52:56.160] [bmv2] [T] [thread 12726] [4.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[14:52:56.160] [bmv2] [D] [thread 12726] [4.0] [cxt 0] Deparsing header 'ethernet'
+[14:52:56.160] [bmv2] [D] [thread 12726] [4.0] [cxt 0] Deparser 'deparser': end
+[14:52:56.160] [bmv2] [D] [thread 12730] [4.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[14:52:56.160] [bmv2] [D] [thread 12726] [5.0] [cxt 0] Pipeline 'egress': start
+[14:52:56.160] [bmv2] [T] [thread 12726] [5.0] [cxt 0] srv6.p4(418) Condition "standard_metadata.egress_port == CPU_PORT" (node_15) is false
+[14:52:56.160] [bmv2] [D] [thread 12726] [5.0] [cxt 0] Pipeline 'egress': end
+[14:52:56.160] [bmv2] [D] [thread 12726] [5.0] [cxt 0] Deparser 'deparser': start
+[14:52:56.160] [bmv2] [T] [thread 12726] [5.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[14:52:56.160] [bmv2] [D] [thread 12726] [5.0] [cxt 0] Deparsing header 'ethernet'
+[14:52:56.160] [bmv2] [D] [thread 12726] [5.0] [cxt 0] Deparser 'deparser': end
+[14:52:56.160] [bmv2] [D] [thread 12730] [5.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Processing packet received on port 2
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Parser 'parser': start
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Parser 'parser' entering state 'start'
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Parser state 'start': key is 0002
+[14:52:56.383] [bmv2] [T] [thread 12725] [6.0] [cxt 0] Bytes parsed: 0
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Extracting header 'ethernet'
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Parser state 'parse_ethernet': key is 86dd
+[14:52:56.383] [bmv2] [T] [thread 12725] [6.0] [cxt 0] Bytes parsed: 14
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Parser 'parser': end
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Pipeline 'ingress': start
+[14:52:56.383] [bmv2] [T] [thread 12725] [6.0] [cxt 0] srv6.p4(366) Condition "standard_metadata.ingress_port == CPU_PORT" (node_2) is false
+[14:52:56.383] [bmv2] [T] [thread 12725] [6.0] [cxt 0] Applying table 'ingress.local_mac_table'
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Looking up key:
+* hdr.ethernet.dst_addr: 333300000016
+
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Table 'ingress.local_mac_table': miss
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Action entry is NoAction - 
+[14:52:56.383] [bmv2] [T] [thread 12725] [6.0] [cxt 0] Action NoAction
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Pipeline 'ingress': end
+[14:52:56.383] [bmv2] [D] [thread 12725] [6.0] [cxt 0] Egress port is 0
+[14:52:56.383] [bmv2] [D] [thread 12726] [6.0] [cxt 0] Pipeline 'egress': start
+[14:52:56.383] [bmv2] [T] [thread 12726] [6.0] [cxt 0] srv6.p4(418) Condition "standard_metadata.egress_port == CPU_PORT" (node_15) is false
+[14:52:56.383] [bmv2] [D] [thread 12726] [6.0] [cxt 0] Pipeline 'egress': end
+[14:52:56.383] [bmv2] [D] [thread 12726] [6.0] [cxt 0] Deparser 'deparser': start
+[14:52:56.383] [bmv2] [T] [thread 12726] [6.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[14:52:56.383] [bmv2] [D] [thread 12726] [6.0] [cxt 0] Deparsing header 'ethernet'
+[14:52:56.383] [bmv2] [D] [thread 12726] [6.0] [cxt 0] Deparser 'deparser': end
+[14:52:56.384] [bmv2] [D] [thread 12730] [6.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Processing packet received on port 2
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Parser 'parser': start
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Parser 'parser' entering state 'start'
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Parser state 'start': key is 0002
+[14:52:56.671] [bmv2] [T] [thread 12725] [7.0] [cxt 0] Bytes parsed: 0
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Extracting header 'ethernet'
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Parser state 'parse_ethernet': key is 86dd
+[14:52:56.671] [bmv2] [T] [thread 12725] [7.0] [cxt 0] Bytes parsed: 14
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Parser 'parser': end
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Pipeline 'ingress': start
+[14:52:56.671] [bmv2] [T] [thread 12725] [7.0] [cxt 0] srv6.p4(366) Condition "standard_metadata.ingress_port == CPU_PORT" (node_2) is false
+[14:52:56.671] [bmv2] [T] [thread 12725] [7.0] [cxt 0] Applying table 'ingress.local_mac_table'
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Looking up key:
+* hdr.ethernet.dst_addr: 333300000016
+
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Table 'ingress.local_mac_table': miss
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Action entry is NoAction - 
+[14:52:56.671] [bmv2] [T] [thread 12725] [7.0] [cxt 0] Action NoAction
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Pipeline 'ingress': end
+[14:52:56.671] [bmv2] [D] [thread 12725] [7.0] [cxt 0] Egress port is 0
+[14:52:56.671] [bmv2] [D] [thread 12726] [7.0] [cxt 0] Pipeline 'egress': start
+[14:52:56.671] [bmv2] [T] [thread 12726] [7.0] [cxt 0] srv6.p4(418) Condition "standard_metadata.egress_port == CPU_PORT" (node_15) is false
+[14:52:56.671] [bmv2] [D] [thread 12726] [7.0] [cxt 0] Pipeline 'egress': end
+[14:52:56.671] [bmv2] [D] [thread 12726] [7.0] [cxt 0] Deparser 'deparser': start
+[14:52:56.671] [bmv2] [T] [thread 12726] [7.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[14:52:56.671] [bmv2] [D] [thread 12726] [7.0] [cxt 0] Deparsing header 'ethernet'
+[14:52:56.672] [bmv2] [D] [thread 12726] [7.0] [cxt 0] Deparser 'deparser': end
+[14:52:56.672] [bmv2] [D] [thread 12730] [7.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Processing packet received on port 1
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Parser 'parser': start
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Parser 'parser' entering state 'start'
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Parser state 'start': key is 0001
+[14:52:56.960] [bmv2] [T] [thread 12725] [8.0] [cxt 0] Bytes parsed: 0
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Parser 'parser' entering state 'parse_ethernet'
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Extracting header 'ethernet'
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Parser state 'parse_ethernet': key is 86dd
+[14:52:56.960] [bmv2] [T] [thread 12725] [8.0] [cxt 0] Bytes parsed: 14
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Parser 'parser': end
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Pipeline 'ingress': start
+[14:52:56.960] [bmv2] [T] [thread 12725] [8.0] [cxt 0] srv6.p4(366) Condition "standard_metadata.ingress_port == CPU_PORT" (node_2) is false
+[14:52:56.960] [bmv2] [T] [thread 12725] [8.0] [cxt 0] Applying table 'ingress.local_mac_table'
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Looking up key:
+* hdr.ethernet.dst_addr: 333300000016
+
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Table 'ingress.local_mac_table': miss
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Action entry is NoAction - 
+[14:52:56.960] [bmv2] [T] [thread 12725] [8.0] [cxt 0] Action NoAction
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Pipeline 'ingress': end
+[14:52:56.960] [bmv2] [D] [thread 12725] [8.0] [cxt 0] Egress port is 0
+[14:52:56.960] [bmv2] [D] [thread 12726] [8.0] [cxt 0] Pipeline 'egress': start
+[14:52:56.960] [bmv2] [T] [thread 12726] [8.0] [cxt 0] srv6.p4(418) Condition "standard_metadata.egress_port == CPU_PORT" (node_15) is false
+[14:52:56.960] [bmv2] [D] [thread 12726] [8.0] [cxt 0] Pipeline 'egress': end
+[14:52:56.960] [bmv2] [D] [thread 12726] [8.0] [cxt 0] Deparser 'deparser': start
+[14:52:56.960] [bmv2] [T] [thread 12726] [8.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[14:52:56.960] [bmv2] [D] [thread 12726] [8.0] [cxt 0] Deparsing header 'ethernet'
+[14:52:56.960] [bmv2] [D] [thread 12726] [8.0] [cxt 0] Deparser 'deparser': end
+[14:52:56.960] [bmv2] [D] [thread 12730] [8.0] [cxt 0] Transmitting packet of size 90 out of port 0

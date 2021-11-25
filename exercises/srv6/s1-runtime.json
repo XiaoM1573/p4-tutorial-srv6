@@ -14,7 +14,7 @@
   	{
   		"table": "ingress.local_sid_table",
   		"match": {
-  			"hdr.ipv6.dst_addr": ["A1:11::11",64]
+  			"hdr.ipv6.dst_addr": ["A1:11::11",128]
   		},
   		"action_name": "ingress.end",
   		"action_params": {}
@@ -22,7 +22,7 @@
   	{
   		"table": "ingress.transit_table",
   		"match": {
-  			"hdr.ipv6.dst_addr": ["2::2", 64]
+  			"hdr.ipv6.dst_addr": ["2::2", 128]
   		},
   		"action_name": "ingress.insert_segment_list_2",
   		"action_params": {
@@ -33,7 +33,7 @@
     {
       "table": "ingress.routing_v6_table",
       "match": {
-      	"hdr.ipv6.dst_addr": ["A2:22::22", 64]
+      	"hdr.ipv6.dst_addr": ["A2:22::22", 128]
       },
       "action_name": "ingress.set_next_hop",
       "action_params": {
@@ -44,7 +44,7 @@
     {
       "table": "ingress.routing_v6_table",
       "match": {
-        "hdr.ipv6.dst_addr": ["1::1", 64]
+        "hdr.ipv6.dst_addr": ["1::1", 128]
       },
       "action_name": "ingress.set_next_hop",
       "action_params": {

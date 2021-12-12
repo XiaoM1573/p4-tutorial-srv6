@@ -6,7 +6,7 @@
 *************************************************************************/
 
 #define ETH_TYPE_IPV4 0x0800
-#define ETH_TYPE_IPV6 0x08dd
+#define ETH_TYPE_IPV6 0x86dd
 #define IP_PROTO_TCP 8w6
 #define IP_PROTO_UDP 8w17
 #define IP_PROTO_SRV6 8w43
